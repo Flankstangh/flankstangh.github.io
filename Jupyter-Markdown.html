@@ -1,0 +1,1017 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>Jupyter Markdown</title>
+  <meta name="description" content="Jupyter Markdown" />
+  <meta name="generator" content="bookdown 0.21 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="Jupyter Markdown" />
+  <meta property="og:type" content="book" />
+  
+  
+  
+  
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Jupyter Markdown" />
+  
+  
+  
+
+<meta name="author" content="李世龙" />
+
+
+<meta name="date" content="2020-11-20" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+
+
+<script src="libs/jquery-2.2.3/jquery.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+
+<script src="libs/accessible-code-block-0.0.1/empty-anchor.js"></script>
+<link href="libs/pagedtable-1.1/css/pagedtable.css" rel="stylesheet" />
+<script src="libs/pagedtable-1.1/js/pagedtable.js"></script>
+
+
+<style type="text/css">
+code.sourceCode > span { display: inline-block; line-height: 1.25; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode { white-space: pre; position: relative; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+code.sourceCode { white-space: pre-wrap; }
+code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li class="chapter" data-level="1" data-path=""><a href="#markdown-使用说明"><i class="fa fa-check"></i><b>1</b> Markdown 使用说明</a><ul>
+<li class="chapter" data-level="1.1" data-path=""><a href="#markdown-原生语法"><i class="fa fa-check"></i><b>1.1</b> Markdown 原生语法</a><ul>
+<li class="chapter" data-level="1.1.1" data-path=""><a href="#基础规则"><i class="fa fa-check"></i><b>1.1.1</b> 基础规则</a></li>
+<li class="chapter" data-level="1.1.2" data-path=""><a href="#特殊规则"><i class="fa fa-check"></i><b>1.1.2</b> 特殊规则</a></li>
+<li class="chapter" data-level="1.1.3" data-path=""><a href="#其他规则"><i class="fa fa-check"></i><b>1.1.3</b> 其他规则</a></li>
+</ul></li>
+<li class="chapter" data-level="1.2" data-path=""><a href="#html-语法"><i class="fa fa-check"></i><b>1.2</b> HTML 语法</a><ul>
+<li class="chapter" data-level="1.2.1" data-path=""><a href="#对齐方式"><i class="fa fa-check"></i><b>1.2.1</b> 对齐方式</a></li>
+<li class="chapter" data-level="1.2.2" data-path=""><a href="#字体字号和颜色"><i class="fa fa-check"></i><b>1.2.2</b> 字体、字号和颜色</a></li>
+<li class="chapter" data-level="1.2.3" data-path=""><a href="#代码块-1"><i class="fa fa-check"></i><b>1.2.3</b> 代码块</a></li>
+</ul></li>
+<li class="chapter" data-level="1.3" data-path=""><a href="#latex-语法"><i class="fa fa-check"></i><b>1.3</b> Latex 语法</a><ul>
+<li class="chapter" data-level="1.3.1" data-path=""><a href="#latex-数学规则"><i class="fa fa-check"></i><b>1.3.1</b> Latex 数学规则</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="2" data-path=""><a href="#jupyter-使用说明"><i class="fa fa-check"></i><b>2</b> Jupyter 使用说明</a><ul>
+<li class="chapter" data-level="2.1" data-path=""><a href="#jupyter-快捷键操作"><i class="fa fa-check"></i><b>2.1</b> Jupyter 快捷键操作</a></li>
+</ul></li>
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Jupyter Markdown</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="header">
+<h1 class="title">Jupyter Markdown</h1>
+<p class="author"><em>李世龙</em></p>
+<p class="date"><em>2020-11-20</em></p>
+</div>
+<!-- Place this tag in your head or just before your close body tag. -->
+<script async defer src="https://buttons.github.io/buttons.js"></script>
+<ol style="list-style-type: decimal">
+<li>使用 RMarkdown 的 <code>child</code> 参数，进行文档拼接。</li>
+<li>这样拼接以后的笔记方便复习。</li>
+<li>相关问题提交到
+<a class="github-button" href="https://github.com/JiaxiangBU/tutoring2/issues" data-show-count="true" aria-label="Issue JiaxiangBU/tutoring on GitHub">Issue</a></li>
+</ol>
+<div id="markdown-使用说明" class="section level1">
+<h1><span class="header-section-number">1</span> Markdown 使用说明</h1>
+<div id="markdown-原生语法" class="section level2">
+<h2><span class="header-section-number">1.1</span> Markdown 原生语法</h2>
+<div id="基础规则" class="section level3">
+<h3><span class="header-section-number">1.1.1</span> 基础规则</h3>
+<div id="标题" class="section level4">
+<h4><span class="header-section-number">1.1.1.1</span> 标题</h4>
+<div class="sourceCode" id="cb1"><pre class="sourceCode markdown"><code class="sourceCode markdown"><span id="cb1-1"><a href="#cb1-1"></a>    # 一级标题  </span>
+<span id="cb1-2"><a href="#cb1-2"></a><span class="bn">    ## 二级标题    </span></span>
+<span id="cb1-3"><a href="#cb1-3"></a><span class="bn">    ### 三级标题  </span></span>
+<span id="cb1-4"><a href="#cb1-4"></a><span class="bn">    #### 四级标题</span></span>
+<span id="cb1-5"><a href="#cb1-5"></a><span class="bn">    ##### 五级标题</span></span>
+<span id="cb1-6"><a href="#cb1-6"></a><span class="bn">    ###### 六级标题</span></span></code></pre></div>
+</div>
+<div id="列表" class="section level4">
+<h4><span class="header-section-number">1.1.1.2</span> 列表</h4>
+<ul>
+<li>无序列表：</li>
+</ul>
+<pre class="mardown"><code>    - 列1
+    - 列2
+    - 列3</code></pre>
+<ul>
+<li>有序列表</li>
+</ul>
+<pre class="mardown"><code>    1. 列1     
+    2. 列2
+    3. 列3</code></pre>
+<ul>
+<li>任务列表：</li>
+</ul>
+<pre class="mardown"><code>    - [ ] 任务一 未做任务
+    - [x] 任务二 已做任务
+
+    符号与文本之间保留一个字符的空格</code></pre>
+</div>
+<div id="缩进与换行" class="section level4">
+<h4><span class="header-section-number">1.1.1.3</span> 缩进与换行</h4>
+<ul>
+<li>缩进符：</li>
+</ul>
+<div class="sourceCode" id="cb5"><pre class="sourceCode markdown"><code class="sourceCode markdown"><span id="cb5-1"><a href="#cb5-1"></a><span class="bn">    &amp;ensp; or &amp;#8194; 表示一个半角的空格</span></span>
+<span id="cb5-2"><a href="#cb5-2"></a><span class="bn">    &amp;emsp; or &amp;#8195;  表示一个全角的空格</span></span>
+<span id="cb5-3"><a href="#cb5-3"></a><span class="bn">    &amp;emsp;&amp;emsp; 两个全角的空格（用的比较多）</span></span>
+<span id="cb5-4"><a href="#cb5-4"></a><span class="bn">    &amp;nbsp; or &amp;#160; 不断行的空白格</span></span></code></pre></div>
+<ul>
+<li>换行符：</li>
+</ul>
+<div class="sourceCode" id="cb6"><pre class="sourceCode markdown"><code class="sourceCode markdown"><span id="cb6-1"><a href="#cb6-1"></a><span class="bn">    单行 &lt;p&gt;</span></span>
+<span id="cb6-2"><a href="#cb6-2"></a><span class="bn">    多行 &lt;br /&gt;</span></span>
+<span id="cb6-3"><a href="#cb6-3"></a><span class="bn">    br 和 / 之间有空格</span></span></code></pre></div>
+</div>
+<div id="分割线" class="section level4">
+<h4><span class="header-section-number">1.1.1.4</span> 分割线</h4>
+<div class="sourceCode" id="cb7"><pre class="sourceCode markdown"><code class="sourceCode markdown"><span id="cb7-1"><a href="#cb7-1"></a><span class="bn">    三个或以上的 *** 或 ---</span></span></code></pre></div>
+</div>
+<div id="超链接" class="section level4">
+<h4><span class="header-section-number">1.1.1.5</span> 超链接</h4>
+<ul>
+<li>显示文本：</li>
+</ul>
+<div class="sourceCode" id="cb8"><pre class="sourceCode markdown"><code class="sourceCode markdown"><span id="cb8-1"><a href="#cb8-1"></a><span class="bn">    [显示文本](链接地址) </span></span></code></pre></div>
+<p>  显示效果：<a href="http://www.baidu.com">百度链接</a></p>
+<ul>
+<li>显示图片：</li>
+</ul>
+<div class="sourceCode" id="cb9"><pre class="sourceCode markdown"><code class="sourceCode markdown"><span id="cb9-1"><a href="#cb9-1"></a><span class="bn">    ![图片名称](本地或网络图片链接)</span></span></code></pre></div>
+<ul>
+<li><p>脚注：</p>
+<p>在需要添加注脚的文字后加上脚注名字[^注脚名字],称为加注。 然后在文本的任意位置(一般在最后)添加脚注，脚注前必须有对应的脚注名字。</p>
+<p>注意：经测试注脚与注脚之间必须空一行，不然会失效。成功后会发现，即使你没有把注脚写在文末，经Markdown转换后，也会自动归类到文章的最后。</p></li>
+</ul>
+<div class="sourceCode" id="cb10"><pre class="sourceCode markdown"><code class="sourceCode markdown"><span id="cb10-1"><a href="#cb10-1"></a>  使用 Markdown<span class="ot">[^1]</span>可以效率的书写文档, 直接转换成 HTML<span class="ot">[^2]</span>。</span>
+<span id="cb10-2"><a href="#cb10-2"></a></span>
+<span id="cb10-3"><a href="#cb10-3"></a>  <span class="ot">[^1]</span>:Markdown是一种纯文本标记语言</span>
+<span id="cb10-4"><a href="#cb10-4"></a></span>
+<span id="cb10-5"><a href="#cb10-5"></a>  <span class="ot">[^2]</span>:HyperText Markup Language 超文本标记语言</span></code></pre></div>
+<ul>
+<li><p>参考式：</p>
+<p>参考式超链接一般用在学术论文上面，或者另一种情况，如果某一个链接在文章中多处使用，那么使用引用 的方式创建链接将非常好，它可以让你对链接进行统一的管理。</p>
+<div class="sourceCode" id="cb11"><pre class="sourceCode markdown"><code class="sourceCode markdown"><span id="cb11-1"><a href="#cb11-1"></a>我经常去的几个网站<span class="ot">[Google][1]</span>、<span class="ot">[Github][2]</span>。</span>
+<span id="cb11-2"><a href="#cb11-2"></a></span>
+<span id="cb11-3"><a href="#cb11-3"></a>[1]:http://www.google.com</span>
+<span id="cb11-4"><a href="#cb11-4"></a>[2]:http://www.Github.com</span></code></pre></div>
+<p>  显示效果：我经常去的几个网站<a href="http://www.google.com">Google</a>、<a href="http://www.leanote.com">Leanote</a>。</p></li>
+</ul>
+</div>
+<div id="引用" class="section level4">
+<h4><span class="header-section-number">1.1.1.6</span> 引用</h4>
+<div class="sourceCode" id="cb12"><pre class="sourceCode markdown"><code class="sourceCode markdown"><span id="cb12-1"><a href="#cb12-1"></a><span class="bn">    文字开始处加 &gt; 和一个空格</span></span>
+<span id="cb12-2"><a href="#cb12-2"></a><span class="bn">    要实现嵌套可以用 &gt;&gt;</span></span></code></pre></div>
+</div>
+<div id="代码块" class="section level4">
+<h4><span class="header-section-number">1.1.1.7</span> 代码块</h4>
+<div class="sourceCode" id="cb13"><pre class="sourceCode markdown"><code class="sourceCode markdown"><span id="cb13-1"><a href="#cb13-1"></a><span class="bn">    单行使用: `代码`</span></span>
+<span id="cb13-2"><a href="#cb13-2"></a><span class="bn">    多行使用:</span></span>
+<span id="cb13-3"><a href="#cb13-3"></a><span class="bn">      ```Python (实现对应语法代码高亮)</span></span>
+<span id="cb13-4"><a href="#cb13-4"></a><span class="bn">      Python代码</span></span>
+<span id="cb13-5"><a href="#cb13-5"></a><span class="bn">      ```</span></span>
+<span id="cb13-6"><a href="#cb13-6"></a><span class="bn">    特殊使用：</span></span>
+<span id="cb13-7"><a href="#cb13-7"></a><span class="bn">      ```Markdown</span></span>
+<span id="cb13-8"><a href="#cb13-8"></a><span class="bn">      Markdown代码</span></span>
+<span id="cb13-9"><a href="#cb13-9"></a><span class="bn">      ```</span></span>
+<span id="cb13-10"><a href="#cb13-10"></a><span class="bn">      其中的markdown语法不会被转义</span></span></code></pre></div>
+</div>
+<div id="文本强调" class="section level4">
+<h4><span class="header-section-number">1.1.1.8</span> 文本强调</h4>
+<div class="sourceCode" id="cb14"><pre class="sourceCode markdown"><code class="sourceCode markdown"><span id="cb14-1"><a href="#cb14-1"></a><span class="bn">    *斜体*   </span></span>
+<span id="cb14-2"><a href="#cb14-2"></a><span class="bn">    **加粗**   </span></span>
+<span id="cb14-3"><a href="#cb14-3"></a>    ***粗斜体*** </span>
+<span id="cb14-4"><a href="#cb14-4"></a><span class="bn">    _强调_   </span></span>
+<span id="cb14-5"><a href="#cb14-5"></a><span class="bn">    __加粗__   </span></span>
+<span id="cb14-6"><a href="#cb14-6"></a>    ___粗斜体___</span>
+<span id="cb14-7"><a href="#cb14-7"></a><span class="bn">    ~删除线~</span></span></code></pre></div>
+</div>
+</div>
+<div id="特殊规则" class="section level3">
+<h3><span class="header-section-number">1.1.2</span> 特殊规则</h3>
+<div id="表格" class="section level4">
+<h4><span class="header-section-number">1.1.2.1</span> 表格</h4>
+<ul>
+<li>Markdown规则：</li>
+</ul>
+<div class="sourceCode" id="cb15"><pre class="sourceCode markdown"><code class="sourceCode markdown"><span id="cb15-1"><a href="#cb15-1"></a><span class="bn">    | Left-Aligned  | Center Aligned  | Right Aligned |</span></span>
+<span id="cb15-2"><a href="#cb15-2"></a><span class="bn">    | :------------ |:---------------:| -----:|</span></span>
+<span id="cb15-3"><a href="#cb15-3"></a><span class="bn">    | Content Cell  | Content Cell | Content Cell |</span></span>
+<span id="cb15-4"><a href="#cb15-4"></a><span class="bn">    | Content Cell  | Content Cell | Content Cell |</span></span></code></pre></div>
+<ul>
+<li>效果：</li>
+</ul>
+<table>
+<thead>
+<tr class="header">
+<th align="left">Left-Aligned</th>
+<th align="center">Center Aligned</th>
+<th align="right">Right Aligned</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">Content Cell</td>
+<td align="center">Content Cell</td>
+<td align="right">Content Cell</td>
+</tr>
+<tr class="even">
+<td align="left">Content Cell</td>
+<td align="center">Content Cell</td>
+<td align="right">Content Cell</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div id="流程图" class="section level4">
+<h4><span class="header-section-number">1.1.2.2</span> 流程图</h4>
+<ul>
+<li>写法：</li>
+</ul>
+<div class="sourceCode" id="cb16"><pre class="sourceCode markdown"><code class="sourceCode markdown"><span id="cb16-1"><a href="#cb16-1"></a>  <span class="bn">```flow</span></span>
+<span id="cb16-2"><a href="#cb16-2"></a><span class="bn">  st=&gt;start: 开始</span></span>
+<span id="cb16-3"><a href="#cb16-3"></a><span class="bn">  op=&gt;operation: My Operation</span></span>
+<span id="cb16-4"><a href="#cb16-4"></a><span class="bn">  cond=&gt;condition: Yes or No?</span></span>
+<span id="cb16-5"><a href="#cb16-5"></a><span class="bn">  e=&gt;end</span></span>
+<span id="cb16-6"><a href="#cb16-6"></a><span class="bn">  st-&gt;op-&gt;cond</span></span>
+<span id="cb16-7"><a href="#cb16-7"></a><span class="bn">  cond(yes)-&gt;e</span></span>
+<span id="cb16-8"><a href="#cb16-8"></a><span class="bn">  cond(no)-&gt;op</span></span>
+<span id="cb16-9"><a href="#cb16-9"></a><span class="bn">  &amp;```</span></span></code></pre></div>
+<ul>
+<li>效果：</li>
+</ul>
+<pre class="flow"><code>st=&gt;start: 开始
+op=&gt;operation: My Operation
+cond=&gt;condition: Yes or No?
+e=&gt;end
+st-&gt;op-&gt;cond
+cond(yes)-&gt;e
+cond(no)-&gt;op</code></pre>
+</div>
+</div>
+<div id="其他规则" class="section level3">
+<h3><span class="header-section-number">1.1.3</span> 其他规则</h3>
+<ol style="list-style-type: decimal">
+<li><p>中英文混排应该「SHOULD」采用如下规则：</p>
+<ul>
+<li>英文和数字使用半角字符</li>
+<li>中文文字之间不加空格</li>
+<li>中文文字与英文、阿拉伯数字及 @ # $ % ^ &amp; * . ( ) 等符号之间加空格</li>
+<li>中文标点之间不加空格</li>
+<li>中文标点与前后字符（无论全角或半角）之间不加空格</li>
+<li>如果括号内有中文，则使用中文括号</li>
+<li>如果括号中的内容全部都是英文，则使用半角英文括号
+-当半角符号 / 表示「或者」之意时，与前后的字符之间均不加空格
+其它具体例子推荐阅读这里</li>
+</ul></li>
+<li><p>中文符号应该「SHOULD」使用如下写法：</p>
+<ul>
+<li>用直角引号（「」）代替双引号（“”），不同输入法的具体设置方法请<a href="https://www.zhihu.com/question/19755746">参考这里</a></li>
+<li>省略号使用「……」，而「。。。」仅用于表示停顿</li>
+</ul></li>
+<li><p>表达方式，应当「SHOULD」遵循《The Element of Style》：</p>
+<ul>
+<li>使段落成为文章的单元：一个段落只表达一个主题</li>
+<li>通常在每一段落开始要点题，在段落结尾要扣题</li>
+<li>陈述句中使用肯定说法</li>
+<li>使用相同的结构表达并列的意思</li>
+</ul></li>
+</ol>
+</div>
+</div>
+<div id="html-语法" class="section level2">
+<h2><span class="header-section-number">1.2</span> HTML 语法</h2>
+<div id="对齐方式" class="section level3">
+<h3><span class="header-section-number">1.2.1</span> 对齐方式</h3>
+<pre><code>  &lt;center&gt;行中心对齐&lt;/center&gt;
+  &lt;p align=&quot;left&quot;&gt;行左对齐&lt;/p&gt;
+  &lt;p align=&quot;right&quot;&gt;行右对齐&lt;/p&gt;</code></pre>
+</div>
+<div id="字体字号和颜色" class="section level3">
+<h3><span class="header-section-number">1.2.2</span> 字体、字号和颜色</h3>
+<ul>
+<li>代码：</li>
+</ul>
+<pre><code>  &lt;font face=&quot;黑体&quot;&gt;我是黑体字&lt;/font&gt;
+  &lt;font face=&quot;微软雅黑&quot;&gt;我是微软雅黑&lt;/font&gt;
+  &lt;font face=&quot;STCAIYUN&quot;&gt;我是华文彩云&lt;/font&gt;
+  &lt;font color=#0099ff size=12 face=&quot;黑体&quot;&gt;黑体&lt;/font&gt;
+  &lt;font color=gray size=5&gt;gray&lt;/font&gt;
+  &lt;font color=#00ffff size=3&gt;null&lt;/font&gt;</code></pre>
+<ul>
+<li><p>显示效果：</p>
+<p><font face="黑体">我是黑体字</font>
+<font face="微软雅黑">我是微软雅黑</font>
+<font face="STCAIYUN">我是华文彩云</font>
+<font color=#0099ff size=5 face="黑体">黑体</font>
+<font color=gray size=4>gray</font>
+<font color=#00ffff size=3>null</font></p></li>
+</ul>
+</div>
+<div id="代码块-1" class="section level3">
+<h3><span class="header-section-number">1.2.3</span> 代码块</h3>
+<pre><code>   &lt;code&gt; 代码 &lt;/code&gt;</code></pre>
+</div>
+</div>
+<div id="latex-语法" class="section level2">
+<h2><span class="header-section-number">1.3</span> Latex 语法</h2>
+<p>在 Markdown 中插入 Latex 公式：</p>
+<ul>
+<li>单行公式：<code>$ latex code $</code></li>
+</ul>
+<center>
+<pre><code>${f(x)=a_nx^n+a_{n-1}x^{n-1}+a_{n-2}x^{n-2}}+\cdots$</code></pre>
+</center>
+  显示效果：
+<center>
+<span class="math inline">\({f(x)=a_nx^n+a_{n-1}x^{n-1}+a_{n-2}x^{n-2}}+\cdots\)</span>
+</center>
+<ul>
+<li>多行公式：<code>$$ latex code $$</code></li>
+</ul>
+<center>
+<pre><code>$$a+\rlap{\overbrace{\phantom{b+c+d}}^m}b+\underbrace{c+d+e}_n+f$$</code></pre>
+</center>
+  显示效果：
+<center>
+<span class="math display">\[ a+\rlap{ \overbrace{ \phantom{b+c+d}}^m} b++\underbrace{c+d+e}_n+f \]</span>
+</center>
+<div id="latex-数学规则" class="section level3">
+<h3><span class="header-section-number">1.3.1</span> Latex 数学规则</h3>
+<div id="上下标" class="section level4">
+<h4><span class="header-section-number">1.3.1.1</span> 上下标</h4>
+<p><code>^</code>表示上标,<code>_</code>表示下标。如果上下标的内容多于一个字符，要用大括号<code>{ }</code>把这些内容括起来当成一个整体。上下标是可以嵌套的，也可以同时使用。</p>
+<ul>
+<li><p>公式：<code>$\sum_i^na_i$</code></p></li>
+<li><p>效果：<span class="math inline">\(\sum_i^na_i\)</span></p></li>
+</ul>
+</div>
+<div id="分数" class="section level4">
+<h4><span class="header-section-number">1.3.1.2</span> 分数</h4>
+<p>分数的输入形式为<code>\frac{分子}{分母}</code></p>
+<ul>
+<li><p>公式：<code>$P(v)=\frac{1}{1+exp(-v/T)}$</code></p></li>
+<li><p>效果：<span class="math inline">\(P(v)=\frac{1}{1+exp(-v/T)}\)</span></p></li>
+</ul>
+</div>
+<div id="上下划线和括号" class="section level4">
+<h4><span class="header-section-number">1.3.1.3</span> 上下划线和括号</h4>
+<ul>
+<li>上划线
+<ul>
+<li>公式：<code>\overline{a+b+c}</code></li>
+<li>效果：<span class="math inline">\(\overline{a+b+c}\)</span></li>
+</ul></li>
+<li>下划线
+<ul>
+<li>公式：<code>\underline{a+b+c}</code></li>
+<li>效果：<span class="math inline">\(\underline{a+b+c}\)</span></li>
+</ul></li>
+<li>上划左箭头
+<ul>
+<li>公式：<code>\overleftarrow{a+b}</code></li>
+<li>效果：<span class="math inline">\(\overleftarrow{a+b}\)</span></li>
+</ul></li>
+<li>下划右箭头
+<ul>
+<li>公式：<code>\underrightarrow{a+b}</code></li>
+<li>效果：<span class="math inline">\(\underrightarrow{a+b}\)</span></li>
+</ul></li>
+<li>下划双箭头
+<ul>
+<li>公式：<code>\underleftrightarrow{a+b}</code></li>
+<li>效果：<span class="math inline">\(\underleftrightarrow{a+b}\)</span></li>
+</ul></li>
+<li>向量箭头
+<ul>
+<li>公式：<code>\vec x = \vec{AB}</code></li>
+<li>效果：<span class="math inline">\(\vec x = \vec{AB}\)</span></li>
+</ul></li>
+<li>上括号
+<ul>
+<li>公式：<code>\overbrace {a+b}^\text{a,b}</code></li>
+<li>效果：<span class="math inline">\(\overbrace {a+b}^\text{a,b}\)</span></li>
+</ul></li>
+<li>下括号
+<ul>
+<li>公式：<code>\underbrace {d+e}^\text{d,e}</code></li>
+<li>效果：<span class="math inline">\(\underbrace {d+e}^\text{d,e}\)</span></li>
+</ul></li>
+<li>上下括号
+<ul>
+<li>公式：<code>a+\rlap{\overbrace{\phantom{b+c+d}}^m}b+\underbrace{c+d+e}_n+f</code></li>
+<li>效果：<span class="math inline">\(a+\rlap{\overbrace{\phantom{b+c+d}}^m}b+\underbrace{c+d+e}_n+f\)</span></li>
+</ul></li>
+</ul>
+</div>
+<div id="根号" class="section level4">
+<h4><span class="header-section-number">1.3.1.4</span> 根号</h4>
+<ul>
+<li>二次根
+<ul>
+<li>公式：<code>\sqrt{12}</code></li>
+<li>效果：<span class="math inline">\(\sqrt{12}\)</span></li>
+</ul></li>
+<li>n次根
+<ul>
+<li>公式：<code>\sqrt[n]{12}</code></li>
+<li>效果：<span class="math inline">\(\sqrt[n]{12}\)</span></li>
+</ul></li>
+</ul>
+</div>
+<div id="括号" class="section level4">
+<h4><span class="header-section-number">1.3.1.5</span> 括号</h4>
+<p><code>(), [] , |</code>分别表示原尺寸的形状，由于大括号<code>{}</code>在 LaTeX 中有特定含义, 所以使用需要转义, 即<code>\{</code>和<code>\}</code>分别表示表示<code>{ }</code>。当需要显示大尺寸的上述符号时, 在上述符号前加上<code>\left</code>和<code>\right</code>命令.</p>
+<ul>
+<li><p>公式：<code>f(x,y,z) = \{3y^2z + \left( 3 +\frac{7x+5}{1+y^2} \right)\}+7</code></p></li>
+<li><p>效果：<span class="math inline">\(f(x,y,z) = \{3y^2z + \left( 3 +\frac{7x+5}{1+y^2} \right)\}+7\)</span></p></li>
+<li><p>括号的其他用法</p></li>
+</ul>
+<table>
+<colgroup>
+<col width="30%" />
+<col width="30%" />
+<col width="38%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th align="left">功能</th>
+<th align="left">语法</th>
+<th align="center">显示</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">圆括号，小括号</td>
+<td align="left"><code>\left( \frac{a}{b} \right)</code></td>
+<td align="center"><span class="math inline">\(\left( \frac{a}{b} \right)\)</span></td>
+</tr>
+<tr class="even">
+<td align="left">方括号，中括号</td>
+<td align="left"><code>\left[ \frac{a}{b} \right]</code></td>
+<td align="center"><span class="math inline">\(\left[\frac{a}{b} \right]\)</span></td>
+</tr>
+<tr class="odd">
+<td align="left">花括号，大括号</td>
+<td align="left"><code>\left\{ \frac{a}{b} \right\}</code></td>
+<td align="center"><span class="math inline">\(\left\{ \frac{a}{b} \right\}\)</span></td>
+</tr>
+<tr class="even">
+<td align="left">尖括号</td>
+<td align="left"><code>\left \langle \frac{a}{b} \right \rangle</code></td>
+<td align="center"><span class="math inline">\(\left \langle \frac{a}{b} \right \rangle\)</span></td>
+</tr>
+<tr class="odd">
+<td align="left">单竖线，绝对值</td>
+<td align="left"><code>\left| \frac{a}{b} \right|</code></td>
+<td align="center"><span class="math inline">\(\left | \frac{a}{b} \right|\)</span></td>
+</tr>
+<tr class="even">
+<td align="left">双竖线，范式</td>
+<td align="left"><code>\left \| \frac{a}{b} \right \|</code></td>
+<td align="center"><span class="math inline">\(\left \| \frac{a}{b} \right \|\)</span></td>
+</tr>
+<tr class="odd">
+<td align="left">取整函数</td>
+<td align="left"><code>\left \lfloor \frac{a}{b} \right \rfloor</code></td>
+<td align="center"><span class="math inline">\(\left \lfloor \frac{a}{b} \right \rfloor\)</span></td>
+</tr>
+<tr class="even">
+<td align="left">取顶函数</td>
+<td align="left"><code>\left \lceil \frac{c}{d} \right \rceil</code></td>
+<td align="center"><span class="math inline">\(\left \lceil \frac{c}{d} \right \rceil\)</span></td>
+</tr>
+<tr class="odd">
+<td align="left">斜线与反斜线</td>
+<td align="left"><code>\left / \frac{a}{b} \right \backslash</code></td>
+<td align="center"><span class="math inline">\(\left / \frac{a}{b} \right \backslash\)</span></td>
+</tr>
+<tr class="even">
+<td align="left">上下箭头</td>
+<td align="left"><code>\left \uparrow \frac{a}{b} \right \downarrow</code></td>
+<td align="center"><span class="math inline">\(\left \uparrow \frac{a}{b} \right \downarrow\)</span></td>
+</tr>
+<tr class="odd">
+<td align="left">混合括号1</td>
+<td align="left"><code>\left [ 0,1 \right )</code></td>
+<td align="center"><span class="math inline">\(\left [ 0,1 \right )\)</span></td>
+</tr>
+<tr class="even">
+<td align="left">混合括号2</td>
+<td align="left"><code>\left \langle \psi \right\|</code></td>
+<td align="center"><span class="math inline">\(\left \langle \psi \right\|\)</span></td>
+</tr>
+<tr class="odd">
+<td align="left">单左括号</td>
+<td align="left"><code>\left \{ \frac{a}{b} \right .</code></td>
+<td align="center"><span class="math inline">\(\left \{ \frac{a}{b} \right .\)</span></td>
+</tr>
+<tr class="even">
+<td align="left">单右括号</td>
+<td align="left"><code>\left . \frac{a}{b} \right \}</code></td>
+<td align="center"><span class="math inline">\(\left . \frac{a}{b} \right \}\)</span></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div id="矩阵" class="section level4">
+<h4><span class="header-section-number">1.3.1.6</span> 矩阵</h4>
+<p>矩阵中, 不同的列使用<code>&amp;</code>分割, 行使用<code>\\</code>分隔</p>
+<p>下面展示一系列矩阵环境排版, 区别在于外面的括号不同</p>
+<ul>
+<li><p>基本公式：
+<code>LaTeX   \begin{matrix type}   a &amp; b \\   c &amp; d   \end{martrix type}</code></p></li>
+<li><p>效果：
+<span class="math display">\[
+  \begin{pmatrix}
+  a &amp; b \\
+  c &amp; d
+  \end{pmatrix}
+  \]</span></p></li>
+<li><p>Martrix Type:</p></li>
+</ul>
+<p>$$<span class="math display">\[\begin{align*}
+
+matrix \quad
+\begin{matrix}
+a &amp; b \\
+c &amp; d
+\end{matrix}
+&amp;
+
+\qquad pmatrix \quad
+\begin{pmatrix}
+a &amp; b \\
+c &amp; d
+\end{pmatrix}
+\\
+
+\quad vmatrix \quad
+\begin{vmatrix}
+a &amp; b \\
+c &amp; d
+\end{vmatrix}
+&amp;
+
+\qquad Vmatrix \quad
+\begin{Vmatrix}
+a &amp; b \\
+c &amp; d
+\end{Vmatrix}
+\\
+
+\qquad bmatrix \quad
+\begin{bmatrix}
+a &amp; b \\
+c &amp; d
+\end{bmatrix}
+&amp;
+
+\qquad Bmatrix \quad
+\begin{Bmatrix}
+a &amp; b \\
+c &amp; d
+\end{Bmatrix}
+
+\end{align*}\]</span>$$</p>
+</div>
+<div id="省略号" class="section level4">
+<h4><span class="header-section-number">1.3.1.7</span> 省略号</h4>
+<p><span class="math display">\[
+\begin{eqnarray*}
+&amp;ldots \quad \ldots \\
+&amp;cdots \quad \cdots \\
+&amp;vdots \qquad \vdots \\
+&amp;ddots \quad \ddots \\
+\end{eqnarray*}
+\]</span></p>
+</div>
+<div id="公式环境" class="section level4">
+<h4><span class="header-section-number">1.3.1.8</span> 公式环境</h4>
+<ul>
+<li><p><code>equation</code>环境用来输入单行公式, 自动生成编号, 也可以使用<code>\tag{...}</code>自己对公式编号;</p></li>
+<li><p>使用<code>equation*</code>环境, 不会自动生成公式编号, 后续介绍的公式输入环境都是在自动编号后面加上<code>*</code>便是不自动编号环境.</p>
+<ul>
+<li><p>公式：</p>
+<div class="sourceCode" id="cb23"><pre class="sourceCode latex"><code class="sourceCode latex"><span id="cb23-1"><a href="#cb23-1"></a><span class="kw">\begin</span>{<span class="ex">equation</span>}</span>
+<span id="cb23-2"><a href="#cb23-2"></a><span class="ss">(a+b)+c = a+(b+c)</span><span class="sc">\\</span></span>
+<span id="cb23-3"><a href="#cb23-3"></a><span class="ss">(a+b) </span><span class="sc">\times</span><span class="ss"> c = a</span><span class="sc">\times</span><span class="ss"> c + b </span><span class="sc">\times</span><span class="ss"> c </span><span class="sc">\tag</span><span class="ss">{1}</span></span>
+<span id="cb23-4"><a href="#cb23-4"></a><span class="kw">\end</span>{<span class="ex">equation</span>}</span></code></pre></div></li>
+<li><p>效果：
+<span class="math display">\[
+\begin{equation}
+(a+b)+c = a+(b+c)\\
+(a+b) \times c = a\times c + b \times c \tag{1}
+\end{equation}
+\]</span></p></li>
+</ul></li>
+<li><p><code>\[ ... \]</code>是<code>equation*</code>环境的简写：</p></li>
+<li><p><code>eqnarray</code>环境用来输入按照等号(或者其他关系符)对齐的方程组, 编号</p>
+<ul>
+<li><p>公式：</p>
+<div class="sourceCode" id="cb24"><pre class="sourceCode latex"><code class="sourceCode latex"><span id="cb24-1"><a href="#cb24-1"></a><span class="ss">$$</span></span>
+<span id="cb24-2"><a href="#cb24-2"></a><span class="er">\begin{eqnarray}</span></span>
+<span id="cb24-3"><a href="#cb24-3"></a><span class="ss">f(x) = a_nx^n </span><span class="sc">\\</span></span>
+<span id="cb24-4"><a href="#cb24-4"></a><span class="ss">g(x) = x^2</span></span>
+<span id="cb24-5"><a href="#cb24-5"></a><span class="er">\end{eqnarray}</span></span>
+<span id="cb24-6"><a href="#cb24-6"></a><span class="ss">$$</span></span></code></pre></div></li>
+<li><p>效果：
+<span class="math display">\[
+\begin{eqnarray}
+f(x) = a_nx^n \\
+g(x) = x^2
+\end{eqnarray}
+\]</span></p></li>
+</ul></li>
+<li><p>输入多行公式,<code>gather</code>环境得到的公式是每行居中的</p>
+<ul>
+<li><p>公式：</p>
+<div class="sourceCode" id="cb25"><pre class="sourceCode latex"><code class="sourceCode latex"><span id="cb25-1"><a href="#cb25-1"></a><span class="ss">$$</span></span>
+<span id="cb25-2"><a href="#cb25-2"></a><span class="er">\begin{gather}</span></span>
+<span id="cb25-3"><a href="#cb25-3"></a><span class="ss">(a+b) </span><span class="sc">\times</span><span class="ss"> c = a</span><span class="sc">\times</span><span class="ss"> c + b </span><span class="sc">\times</span><span class="ss"> c </span><span class="sc">\notag</span><span class="ss"> </span><span class="sc">\\</span></span>
+<span id="cb25-4"><a href="#cb25-4"></a><span class="ss">ac= a</span><span class="sc">\times</span><span class="ss"> c </span><span class="sc">\\</span></span>
+<span id="cb25-5"><a href="#cb25-5"></a><span class="er">\end{gather}</span></span>
+<span id="cb25-6"><a href="#cb25-6"></a><span class="ss">$$</span></span></code></pre></div></li>
+<li><p>效果：
+<span class="math display">\[
+\begin{gather}
+(a+b) \times c = a\times c + b \times c \notag \\
+ac= a\times c \\
+\end{gather}
+\]</span></p></li>
+</ul></li>
+<li><p><code>align</code>环境则允许公式按照等号或者其他关系符对齐, 在关系符前加<code>&amp;</code>表示对齐</p>
+<ul>
+<li><p>公式：</p>
+<div class="sourceCode" id="cb26"><pre class="sourceCode latex"><code class="sourceCode latex"><span id="cb26-1"><a href="#cb26-1"></a><span class="ss">$$</span></span>
+<span id="cb26-2"><a href="#cb26-2"></a><span class="er">\begin{align}</span></span>
+<span id="cb26-3"><a href="#cb26-3"></a><span class="ss">y &amp;= </span><span class="sc">\cos</span><span class="ss"> t + 1 </span><span class="sc">\\</span></span>
+<span id="cb26-4"><a href="#cb26-4"></a><span class="ss">y &amp;= 2sin t </span><span class="sc">\\</span></span>
+<span id="cb26-5"><a href="#cb26-5"></a><span class="er">\end{align}</span></span>
+<span id="cb26-6"><a href="#cb26-6"></a><span class="ss">$$</span></span></code></pre></div></li>
+<li><p>效果：
+<span class="math display">\[
+\begin{align}
+y &amp;= \cos t + 1 \\
+y &amp;= 2sin t \\
+\end{align}
+\]</span></p></li>
+</ul></li>
+<li><p><code>align</code>环境还允许排列多列对齐公式, 列与列之间使用<code>&amp;</code>分割</p>
+<ul>
+<li><p>公式：</p>
+<div class="sourceCode" id="cb27"><pre class="sourceCode latex"><code class="sourceCode latex"><span id="cb27-1"><a href="#cb27-1"></a><span class="ss">$$</span></span>
+<span id="cb27-2"><a href="#cb27-2"></a><span class="er">\begin{align*}</span></span>
+<span id="cb27-3"><a href="#cb27-3"></a><span class="ss"> x &amp;= t &amp; x &amp;= </span><span class="sc">\cos</span><span class="ss"> t &amp;  x &amp;= t </span><span class="sc">\\</span></span>
+<span id="cb27-4"><a href="#cb27-4"></a><span class="ss"> y &amp;= 2t &amp; y &amp;= </span><span class="sc">\sin</span><span class="ss"> (t+1) &amp; y &amp;= </span><span class="sc">\sin</span><span class="ss"> t </span><span class="sc">\\</span></span>
+<span id="cb27-5"><a href="#cb27-5"></a><span class="er">\end{align*}</span></span>
+<span id="cb27-6"><a href="#cb27-6"></a><span class="ss">$$</span></span></code></pre></div></li>
+<li><p>效果：
+<span class="math display">\[
+\begin{align*}
+ x &amp;= t &amp; x &amp;= \cos t &amp;  x &amp;= t \\
+ y &amp;= 2t &amp; y &amp;= \sin (t+1) &amp; y &amp;= \sin t \\
+\end{align*}
+\]</span></p></li>
+</ul></li>
+<li><p>align 环境中列分隔符 &amp; 一般放在关系符前面, 如果个别需要再关系符后面或者别的地方对齐的, 则应该注意使用的符号类型</p>
+<ul>
+<li><p>公式：</p>
+<div class="sourceCode" id="cb28"><pre class="sourceCode latex"><code class="sourceCode latex"><span id="cb28-1"><a href="#cb28-1"></a><span class="ss">$$</span></span>
+<span id="cb28-2"><a href="#cb28-2"></a><span class="co">% 关系符后对齐，需要使用空的分组</span></span>
+<span id="cb28-3"><a href="#cb28-3"></a><span class="co">% 代替关系符右侧符号，保证间距</span></span>
+<span id="cb28-4"><a href="#cb28-4"></a><span class="er">\begin{align*}</span></span>
+<span id="cb28-5"><a href="#cb28-5"></a><span class="ss">&amp; (a+b)(a^2-ab+b^2) </span><span class="sc">\notag</span><span class="ss"> </span><span class="sc">\\</span></span>
+<span id="cb28-6"><a href="#cb28-6"></a><span class="ss">={ } &amp; a^3 - a^2b + ab^2 + a^2b - ab^2 + b^2 </span><span class="sc">\notag</span><span class="ss"> </span><span class="sc">\\</span></span>
+<span id="cb28-7"><a href="#cb28-7"></a><span class="ss">={ } &amp; a^3 + b^3 </span><span class="sc">\label</span><span class="ss">{eq:cubesum}</span></span>
+<span id="cb28-8"><a href="#cb28-8"></a><span class="er">\end{align*}</span></span>
+<span id="cb28-9"><a href="#cb28-9"></a><span class="ss">$$</span></span></code></pre></div></li>
+<li><p>效果：
+<span class="math display">\[
+% 关系符后对齐，需要使用空的分组
+% 代替关系符右侧符号，保证间距
+\begin{align*}
+&amp; (a+b)(a^2-ab+b^2) \notag \\
+={ } &amp; a^3 - a^2b + ab^2 + a^2b - ab^2 + b^2 \notag \\
+={ } &amp; a^3 + b^3 \label{eq:cubesum}
+\end{align*}
+\]</span></p></li>
+</ul></li>
+</ul>
+</div>
+<div id="跨行公式" class="section level4">
+<h4><span class="header-section-number">1.3.1.9</span> 跨行公式</h4>
+<ul>
+<li><p>单个公式很长的时候需要换行，但仅允许生成一个编号时，可以用 split 环境包围公式代码，在需要转行的地方使用 . split 环境一般用在 equation, gather 环境里面, 可以把单个公式拆成多行, 同时支持 align 那样对齐公式.</p>
+<p>split 环境不产生编号, 编号由外面的数学环境产生; 每行需要使用1个&amp;来标识对齐的位置，结束后可使用  标签编号。 如果 split 环境中某一行不是在二元关系符前面对齐, 需要通过 等手段设置间距或对齐方式.</p>
+<ul>
+<li><p>公式：</p>
+<div class="sourceCode" id="cb29"><pre class="sourceCode latex"><code class="sourceCode latex"><span id="cb29-1"><a href="#cb29-1"></a><span class="ss">$$</span></span>
+<span id="cb29-2"><a href="#cb29-2"></a><span class="co">% 注意 \tag{...} 编号的位置</span></span>
+<span id="cb29-3"><a href="#cb29-3"></a><span class="er">\begin{equation}</span></span>
+<span id="cb29-4"><a href="#cb29-4"></a><span class="sc">\begin</span><span class="ss">{split}</span></span>
+<span id="cb29-5"><a href="#cb29-5"></a><span class="sc">\cos</span><span class="ss"> 2x &amp;= </span><span class="sc">\cos</span><span class="ss">^2 x - </span><span class="sc">\sin</span><span class="ss">^2 x </span><span class="sc">\\</span></span>
+<span id="cb29-6"><a href="#cb29-6"></a><span class="ss">        &amp;= 2</span><span class="sc">\cos</span><span class="ss">^2 x - 1</span></span>
+<span id="cb29-7"><a href="#cb29-7"></a><span class="sc">\end</span><span class="ss">{split} </span><span class="sc">\tag</span><span class="ss">{3.1}</span></span>
+<span id="cb29-8"><a href="#cb29-8"></a><span class="er">\end{equation}</span></span>
+<span id="cb29-9"><a href="#cb29-9"></a><span class="ss">$$</span></span></code></pre></div></li>
+<li><p>效果：
+<span class="math display">\[
+% 注意 \tag{...} 编号的位置
+\begin{equation}
+\begin{split}
+\cos 2x &amp;= \cos^2 x - \sin^2 x \\
+      &amp;= 2\cos^2 x - 1
+\end{split} \tag{3.1}
+\end{equation}
+\]</span></p></li>
+</ul></li>
+</ul>
+</div>
+<div id="公式块" class="section level4">
+<h4><span class="header-section-number">1.3.1.10</span> 公式块</h4>
+<ul>
+<li><p>最常见的是<code>case</code>环境, 他在几行公式前面用花括号括起来, 表示几种不同的情况; 每行公式使用<code>&amp;</code>分隔, 便是表达式与条件, 例如</p>
+<ul>
+<li><p>公式：</p>
+<div class="sourceCode" id="cb30"><pre class="sourceCode latex"><code class="sourceCode latex"><span id="cb30-1"><a href="#cb30-1"></a><span class="ss">$$</span></span>
+<span id="cb30-2"><a href="#cb30-2"></a><span class="er">\begin{equation}</span></span>
+<span id="cb30-3"><a href="#cb30-3"></a><span class="ss">D(x) = </span><span class="sc">\begin</span><span class="ss">{cases}</span></span>
+<span id="cb30-4"><a href="#cb30-4"></a><span class="ss">1, &amp; </span><span class="sc">\text</span>{if }<span class="ss"> x </span><span class="sc">\in</span><span class="ss"> </span><span class="sc">\mathbb</span><span class="ss">{Q}; </span><span class="sc">\\</span></span>
+<span id="cb30-5"><a href="#cb30-5"></a><span class="ss">0, &amp; </span><span class="sc">\text</span>{if }<span class="ss"> x </span><span class="sc">\in</span></span>
+<span id="cb30-6"><a href="#cb30-6"></a><span class="ss">     </span><span class="sc">\mathbb</span><span class="ss">{R}</span><span class="sc">\setminus\mathbb</span><span class="ss">{Q}.</span></span>
+<span id="cb30-7"><a href="#cb30-7"></a><span class="sc">\end</span><span class="ss">{cases}</span></span>
+<span id="cb30-8"><a href="#cb30-8"></a><span class="er">\end{equation}</span></span>
+<span id="cb30-9"><a href="#cb30-9"></a><span class="ss">$$</span></span></code></pre></div></li>
+<li><p>效果：
+<span class="math display">\[
+\begin{equation}
+D(x) = \begin{cases}
+1, &amp; \text{if } x \in \mathbb{Q}; \\
+0, &amp; \text{if } x \in
+   \mathbb{R}\setminus\mathbb{Q}.
+\end{cases}
+\end{equation}
+\]</span></p></li>
+<li><p><code>gathered</code>环境 将几行公式居中排列, 组合为一个整体;</p>
+<ul>
+<li><p>公式：</p>
+<div class="sourceCode" id="cb31"><pre class="sourceCode latex"><code class="sourceCode latex"><span id="cb31-1"><a href="#cb31-1"></a><span class="ss">$$</span></span>
+<span id="cb31-2"><a href="#cb31-2"></a><span class="sc">\left</span><span class="ss">. </span><span class="sc">\begin</span><span class="ss">{gathered}</span></span>
+<span id="cb31-3"><a href="#cb31-3"></a><span class="ss">S </span><span class="sc">\subseteq</span><span class="ss"> T </span><span class="sc">\\</span></span>
+<span id="cb31-4"><a href="#cb31-4"></a><span class="ss">S </span><span class="sc">\supseteq</span><span class="ss"> T</span></span>
+<span id="cb31-5"><a href="#cb31-5"></a><span class="sc">\end</span><span class="ss">{gathered} </span><span class="sc">\right\}</span></span>
+<span id="cb31-6"><a href="#cb31-6"></a><span class="sc">\implies</span><span class="ss"> S = T</span></span>
+<span id="cb31-7"><a href="#cb31-7"></a><span class="ss">$$</span></span></code></pre></div></li>
+<li><p>效果：
+<span class="math display">\[
+\left. \begin{gathered}
+S \subseteq T \\
+S \supseteq T
+\end{gathered} \right\}
+\implies S = T
+\]</span></p></li>
+</ul></li>
+</ul></li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+<div id="jupyter-使用说明" class="section level1">
+<h1><span class="header-section-number">2</span> Jupyter 使用说明</h1>
+<div id="jupyter-快捷键操作" class="section level2">
+<h2><span class="header-section-number">2.1</span> Jupyter 快捷键操作</h2>
+<ul>
+<li>按下 Enter,进入 Edit 模式</li>
+<li>按下 Esc,进入 Command 模式</li>
+</ul>
+<p><strong>在 Command mode下：</strong></p>
+<ol style="list-style-type: decimal">
+<li>运行当前 Cell，并移动到下一个 Cell
+<ul>
+<li>Shift + Enter</li>
+</ul></li>
+<li>创建 Cell
+<ul>
+<li>按下 a ,在之前创建一个新的 cell</li>
+<li>按下 b ,在之后创建一个新的 cell</li>
+</ul></li>
+<li>Cell 中 Code 和 Markdown 的切换
+<ul>
+<li>按下 y, 进入 Code</li>
+<li>按下 m, 进入 Markdown</li>
+</ul></li>
+<li>显示 Cell 中的行数
+<ul>
+<li>在一个 cell 中按下 l</li>
+</ul></li>
+<li>删除 Cell
+<ul>
+<li>在一个 cell 中按两次 d</li>
+</ul></li>
+<li>保存 Notebook
+<ul>
+<li>在一个 cell 中按下 s</li>
+</ul></li>
+<li>启动命令面板
+<ul>
+<li>在一个 cell 中按下 Ctrl + Shift + P</li>
+<li>界面中的小键盘也可以启动</li>
+</ul></li>
+<li>设置标题格式
+<ul>
+<li>按1，将单元格设定一级标题</li>
+<li>按2，将单元格设定二级标题</li>
+<li>按3，将单元格设定三级标题</li>
+<li>按4，将单元格设定四级标题</li>
+<li>按5，将单元格设定五级标题</li>
+<li>按6，将单元格设定六级标题</li>
+</ul></li>
+</ol>
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+
+
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/lunr.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": null,
+"text": null
+},
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": null,
+"text": null
+},
+"download": null,
+"toc": {
+"collapse": "subsection"
+},
+"search": false
+});
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+</body>
+
+</html>

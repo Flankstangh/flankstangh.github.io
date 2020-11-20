@@ -1,0 +1,38 @@
+---
+title: "Jupyter Markdown"
+author: "李世龙"
+date: "`r Sys.Date()`"
+output:
+    bookdown::gitbook:
+        split_by: none
+        df_print: paged
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+
+<!-- Place this tag in your head or just before your close body tag. -->
+<script async defer src="https://buttons.github.io/buttons.js"></script>
+
+1. 使用 RMarkdown 的 `child` 参数，进行文档拼接。
+1. 这样拼接以后的笔记方便复习。
+1. 相关问题提交到
+    <a class="github-button" href="https://github.com/JiaxiangBU/tutoring2/issues" data-show-count="true" aria-label="Issue JiaxiangBU/tutoring on GitHub">Issue</a>
+
+# Markdown 使用说明
+
+```{r,child='Markdown Grammar.md'}
+```
+
+```{r,child='Html Grammar.md'}
+```
+
+```{r,child='Latex Grammar.md'}
+```
+
+# Jupyter 使用说明
+
+```{r,child='Jupyter Shortcuts.md'}
+```
