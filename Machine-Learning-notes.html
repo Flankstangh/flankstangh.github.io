@@ -1,0 +1,430 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>Machine Learning notes</title>
+  <meta name="description" content="Machine Learning notes" />
+  <meta name="generator" content="bookdown 0.21 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="Machine Learning notes" />
+  <meta property="og:type" content="book" />
+  
+  
+  
+  
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Machine Learning notes" />
+  
+  
+  
+
+<meta name="author" content="李世龙" />
+
+
+<meta name="date" content="2020-11-23" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+
+
+<script src="libs/jquery-2.2.3/jquery.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+
+<script src="libs/accessible-code-block-0.0.1/empty-anchor.js"></script>
+<link href="libs/pagedtable-1.1/css/pagedtable.css" rel="stylesheet" />
+<script src="libs/pagedtable-1.1/js/pagedtable.js"></script>
+
+
+<style type="text/css">
+code.sourceCode > span { display: inline-block; line-height: 1.25; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode { white-space: pre; position: relative; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+code.sourceCode { white-space: pre-wrap; }
+code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li class="chapter" data-level="1" data-path=""><a href="#分类算法"><i class="fa fa-check"></i><b>1</b> 分类算法</a><ul>
+<li class="chapter" data-level="1.1" data-path=""><a href="#k-临近回归knn"><i class="fa fa-check"></i><b>1.1</b> K-临近回归（KNN）</a><ul>
+<li class="chapter" data-level="1.1.1" data-path=""><a href="#基本原理"><i class="fa fa-check"></i><b>1.1.1</b> 基本原理</a></li>
+<li class="chapter" data-level="1.1.2" data-path=""><a href="#knn算法的理论错误率"><i class="fa fa-check"></i><b>1.1.2</b> KNN算法的理论错误率:</a></li>
+<li class="chapter" data-level="1.1.3" data-path=""><a href="#在时间序列分析中的应用"><i class="fa fa-check"></i><b>1.1.3</b> 在时间序列分析中的应用</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="2" data-path=""><a href="#降维算法"><i class="fa fa-check"></i><b>2</b> 降维算法</a><ul>
+<li class="chapter" data-level="2.1" data-path=""><a href="#主成分分析-principle-component-analysis"><i class="fa fa-check"></i><b>2.1</b> 主成分分析 (Principle Component Analysis)</a><ul>
+<li class="chapter" data-level="2.1.1" data-path=""><a href="#pca的作用"><i class="fa fa-check"></i><b>2.1.1</b> PCA的作用</a></li>
+<li class="chapter" data-level="2.1.2" data-path=""><a href="#pca的数学原理"><i class="fa fa-check"></i><b>2.1.2</b> PCA的数学原理</a></li>
+</ul></li>
+</ul></li>
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Machine Learning notes</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="header">
+<h1 class="title">Machine Learning notes</h1>
+<p class="author"><em>李世龙</em></p>
+<p class="date"><em>2020-11-23</em></p>
+</div>
+<!-- Place this tag in your head or just before your close body tag. -->
+<script async defer src="https://buttons.github.io/buttons.js"></script>
+<ol style="list-style-type: decimal">
+<li>使用 RMarkdown 的 <code>child</code> 参数，进行文档拼接。</li>
+<li>这样拼接以后的笔记方便复习。</li>
+<li>相关问题提交到
+<a class="github-button" href="https://github.com/JiaxiangBU/tutoring2/issues" data-show-count="true" aria-label="Issue JiaxiangBU/tutoring on GitHub">Issue</a></li>
+</ol>
+<div id="分类算法" class="section level1">
+<h1><span class="header-section-number">1</span> 分类算法</h1>
+<div id="k-临近回归knn" class="section level2">
+<h2><span class="header-section-number">1.1</span> K-临近回归（KNN）</h2>
+<p>KNN 是一种监督式机器学习算法，在分类问题 (classification) 中应用较广，但也可以作为一种非参数方法，用于回归分析 (regression) 进行预测。</p>
+<p>下面简要介绍一下 KNN 算法的基本原理，并通过实例说明其在时间序列分析中的应用（附R代码）
+<br/></p>
+<details>
+<p><summary>基本原理（见隐藏内容）</summary></p>
+<div id="基本原理" class="section level3">
+<h3><span class="header-section-number">1.1.1</span> 基本原理</h3>
+<p>KNN 回归的基本思路是：对于一组包含特征空间 (Feature Space) 的样本，某个待测样本的目标属性（通常用一组向量表示，称为目标向量） 可以利用与其最相似（即在特征空间中相邻最近）的<span class="math inline">\(k\)</span>个样本的目标向量来预测。</p>
+<p>在实际处理中，所有已知的样本被称为训练样本。对于第<span class="math inline">\(i\)</span>个训练样本，其包含一个<span class="math inline">\(n\)</span>-维特征向量 (Fearure Vector): <span class="math display">\[(f_1^i,f_2^i,f_3^i, \ldots ,f_n^i)\]</span> 这个向量描述了该实例和关联的<span class="math inline">\(m\)</span>-维目标向量(Target Vector): <span class="math display">\[(t_1^i,t_2^i,t_3^i, \ldots ,t_m^i)\]</span></p>
+<p>对于一个给定的新样本，其特征向量已知，为<span class="math inline">\((q_1,q_2,q_3, \ldots ,q_n)\)</span>，但目标向量未知。KNN 回归的工作，就是利用待测样本已知的特征向量，找出与其相似的训练样本，并利用这些训练样本的目标向量来预测待测样本的目标向量。</p>
+<p>KNN 回归决策有三大基本要素：<strong>距离度量方法、k值的选择、回归决策规则</strong>。接下来逐个进行说明：
+<br/>
+<br/></p>
+<div id="一距离度量方法" class="section level4">
+<h4><span class="header-section-number">1.1.1.1</span> 一、距离度量方法：</h4>
+<p>判断样本相似度的指标，一般选用特征向量空间中待测样本与训练样本的距离，在以下几种距离中，最广泛使用的为欧氏距离。</p>
+<ol style="list-style-type: decimal">
+<li><p>欧几里得距离 (Euclidean distance):
+<span class="math display">\[
+\begin{align*}
+\sqrt {\sum_{x=1}^n(f_x^i-q_x)^2} 
+\end{align*}
+\]</span></p></li>
+<li><p>曼哈顿距离 (Manhattan distance):
+<span class="math display">\[ \sum_{x=1}^n|f_x^i-q_x| \]</span></p></li>
+</ol>
+<hr />
+<center>
+附：闵可夫斯基距离 (Minkowski distance)：
+<span class="math display">\[
+\begin{align*}
+\sqrt[p] {\sum_{x=1}^n({f_x^i}^{n}-{q_x}^{n})^p} 
+\end{align*}
+\]</span>
+当 p=1 时，明氏距离为曼哈顿距离，当 p=2 时，明氏距离即为欧式距离
+</center>
+<hr />
+<ol start="3" style="list-style-type: decimal">
+<li>海明距离 (Hamming distance):
+<span class="math display">\[ D_h=\sum_{x=1}^n|f_x^i-q_x|=
+\begin{cases}
+1, &amp; \text{if } f_x^i \not= q_x \\
+0, &amp; \text{if } f_x^i =q_x
+\end{cases} \]</span></li>
+</ol>
+<center>
+欧式距离适合于连续变量，而当样本被处理为0-1的二进制编码时，海明距离会更加方便
+</center>
+<p><br/>
+<br/></p>
+</div>
+<div id="二k值的选择" class="section level4">
+<h4><span class="header-section-number">1.1.1.2</span> 二、k值的选择：</h4>
+<p>除了输入的样本点外，KNN模型实际上只有k一个参数，因此k的选取就显得至关重要。
+如果k过大，模型变得简单，方差减小，但误差会增大；相应的，若k过小，模型的误差减小，但方差增大。因此，通常采用交叉验证的方法来获得最优的k值。</p>
+<p>交叉验证 (Cross-validation) 也是机器学习的一种常用方法，简单来说，就是切分已知样本为训练组和验证组，选取不同的k值，利用训练组对模型进行训练，再利用验证组获得预测值与真实值之间的误差。通过比较误差大小，就可以获得最优的k值。</p>
+<p>具体可参考: <strong>Duda R O, Hart P E, Stork D G. <em>Pattern classification</em>. 2nd ed. New York: Wiley, 2001.</strong>
+<br/>
+<br/></p>
+</div>
+<div id="三回归决策规则" class="section level4">
+<h4><span class="header-section-number">1.1.1.3</span> 三、回归决策规则：</h4>
+<p>其基本公式如下：<span class="math display">\[\hat{f}(x)=Average[y_i|x_i\ {\sf{is}}\ {\sf{in}}\ N_k(x)]\]</span></p>
+<p>得出的预测值，实际就是所选的相邻<span class="math inline">\(k\)</span>个的平均值。
+<br/>
+<br/>
+<br/></p>
+</div>
+</div>
+<div id="knn算法的理论错误率" class="section level3">
+<h3><span class="header-section-number">1.1.2</span> KNN算法的理论错误率:</h3>
+<p><strong>（于剑. <em>机器学习 从公理到算法</em>. 2017, p140）</strong></p>
+设<span class="math inline">\(N\)</span>个样本下最临近的平均错误率为<span class="math inline">\(P_N(e)\)</span>，样本<span class="math inline">\(x\)</span>的最近邻为<span class="math inline">\(x^{&#39;} \in \{ x_1,x_2, \ldots, x_N\}\)</span>，平均错误率可以写成
+<span class="math display">\[P_N(e)= \iint P_N(e|x,x^{&#39;})p(x^{&#39;}|x)dx^{&#39;}p(x)dx\]</span>
+<span class="math display">\[P_N(e|x,x^{&#39;})=1- \sum_{i=1}^c P(i|x)P(i|x^{&#39;})\]</span>
+当<span class="math inline">\(N \rightarrow \infty\)</span>时，<span class="math inline">\(P_N(e)\)</span>的极限<span class="math inline">\(P=lim_{N \rightarrow \infty}P_N(e)\)</span>，则可证明存在
+<span class="math display">\[P^* \leq P \leq P^*(2- \frac{c}{c-1} P^*)\]</span>
+其中<span class="math inline">\(P^*\)</span>为贝叶斯错误率，也即理论上的最优分类错误率，<span class="math inline">\(c\)</span>为类别个数，<span class="math inline">\(P\)</span>为 KNN 算法的渐进错误率。
+<br/>
+<br/>
+<br/>
+</details>
+</div>
+<div id="在时间序列分析中的应用" class="section level3">
+<h3><span class="header-section-number">1.1.3</span> 在时间序列分析中的应用</h3>
+<p>KNN 回归也可用于处理时间序列。在这种情况下，样本点的目标向量，即是该样本在时间序列中的值向量；样本点的特征向量，是目标向量的一系列的滞后值。</p>
+<p>例如，对于一个含有<span class="math inline">\(n\)</span>个观测值的时间序列：
+<span class="math display">\[t=\{x_1,x_2,x_3, \ldots,x_n \}\]</span>
+要预测其第<span class="math inline">\(n+1\)</span>期的值，即求第<span class="math inline">\(n+1\)</span>个样本点的目标向量<span class="math inline">\(x_{n+1}\)</span>,该待测样本相应的特征向量为<span class="math inline">\(m\)</span>阶滞后项：
+<span class="math display">\[\underbrace{\{x_{n-m+1},x_{n-m+2}, \ldots, x_{n-1},x_{n} \}}_m\]</span>
+最后是选择与第<span class="math inline">\(n+1\)</span>个样本点最接近的<span class="math inline">\(k\)</span>个训练样本，也即选择 KNN 回归的k值。</p>
+<p>因此，从本质上说，KNN 回归在时间序列中的应用，建立的也是自回归模型，因此可以和 ARIMA 模型进行对比。
+<br/></p>
+<p>后面以一个具体的例子，来说明如何在R中实现 KNN 时间序列回归。
+<br/>
+<br/></p>
+<div id="knn-in-r" class="section level4">
+<h4><span class="header-section-number">1.1.3.1</span> KNN in R：</h4>
+<p>在R中，与 KNN 回归相关的包为<strong>tsfknn</strong></p>
+<p>首先导入所需要的Timeseries数据，为2013年-2020年伊斯坦布尔交易所黄金期货的月度价格：</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1"></a><span class="kw">library</span>(readxl)</span>
+<span id="cb1-2"><a href="#cb1-2"></a>xautry_df&lt;-<span class="kw">read_excel</span>(<span class="st">&#39;xau_try.xlsx&#39;</span>)</span>
+<span id="cb1-3"><a href="#cb1-3"></a>xautry_ts&lt;-<span class="kw">ts</span>(xautry_df<span class="op">$</span>price,<span class="dt">start=</span><span class="kw">c</span>(<span class="dv">2013</span>,<span class="dv">1</span>),<span class="dt">frequency=</span><span class="dv">12</span>)</span></code></pre></div>
+<p>之后利用 tsfknn.knn_forecasting() 方法对该时间序列进行 KNN 回归。该方法涉及以下常用参数：
+<span class="math display">\[\begin{gather}
+\rm{knn\_forecasting( TimeS,\ h,\ lags,\ k )} \\
+\rm{TimeS:待预测的时间序列}\\
+\rm{h:期望获得的预测值期数}\\
+\rm{lags:使用的滞后期数}\\
+\rm{k:KNN模型中的k值}\\
+\end{gather}\]</span></p>
+<div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1"></a><span class="kw">library</span>(tsfknn)</span>
+<span id="cb2-2"><a href="#cb2-2"></a><span class="kw">library</span>(ggplot2)</span>
+<span id="cb2-3"><a href="#cb2-3"></a>pred&lt;-<span class="kw">knn_forecasting</span>(xautry_ts,<span class="dt">h=</span><span class="dv">6</span>,<span class="dt">lag=</span><span class="dv">1</span><span class="op">:</span><span class="dv">12</span>,<span class="dt">k=</span><span class="dv">3</span>)</span>
+<span id="cb2-4"><a href="#cb2-4"></a><span class="kw">autoplot</span>(pred,<span class="dt">highlight =</span> <span class="st">&quot;neighbors&quot;</span>,<span class="dt">faceting =</span> <span class="ot">TRUE</span>)</span></code></pre></div>
+<p><img src="Machine-Learning-notes_files/figure-html/unnamed-chunk-4-1.png" width="672" /></p>
+<p>上图中，蓝色点为<span class="math inline">\(m\)</span>期滞后点，本例中<span class="math inline">\(\text{lag}=1:12\)</span>，即选择12期滞后；绿色点为<span class="math inline">\(h\)</span>个待测样本，红色点为待测样本的预测值，本例中为预测6期；输入的<span class="math inline">\(k=3\)</span>，则表示每一个预测点都由与其相邻的3个已知点平均得出。</p>
+<p><br/>
+在未知最优k的情况下，可以选择使用多个k值并求平均 (Martínez et al., 2017) 来提高预测精度。在本例中，k参数可以输入为一个向量，以此来进行多重k的KNN回归：</p>
+<div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1"></a>pred&lt;-<span class="kw">knn_forecasting</span>(xautry_ts,<span class="dt">h=</span><span class="dv">6</span>,<span class="dt">lag=</span><span class="dv">1</span><span class="op">:</span><span class="dv">12</span>,<span class="dt">k=</span><span class="kw">c</span>(<span class="dv">2</span>,<span class="dv">6</span>))</span>
+<span id="cb3-2"><a href="#cb3-2"></a><span class="kw">autoplot</span>(pred,<span class="dt">highlight =</span> <span class="st">&quot;neighbors&quot;</span>,<span class="dt">faceting =</span> <span class="ot">TRUE</span>)</span></code></pre></div>
+<pre><code>## Warning in autoplot.knnForecast(pred, highlight = &quot;neighbors&quot;, faceting = TRUE): When several k are used it is not possible to see the
+##               neighbors</code></pre>
+<p><img src="Machine-Learning-notes_files/figure-html/unnamed-chunk-5-1.png" width="672" /></p>
+</div>
+</div>
+</div>
+</div>
+<div id="降维算法" class="section level1">
+<h1><span class="header-section-number">2</span> 降维算法</h1>
+<div id="主成分分析-principle-component-analysis" class="section level2">
+<h2><span class="header-section-number">2.1</span> 主成分分析 (Principle Component Analysis)</h2>
+<div id="pca的作用" class="section level3">
+<h3><span class="header-section-number">2.1.1</span> PCA的作用</h3>
+<p>PCA的主要作用是降维。</p>
+<p>如下图，数据点大部分都分布在<span class="math inline">\(x_2\)</span>方向上，在<span class="math inline">\(x_1\)</span>方向上的取值近似相同，那么对于有些问题就可以直接将<span class="math inline">\(x_1\)</span>坐标的数值去掉，只取<span class="math inline">\(x_2\)</span>坐标的值即可。但是有些情况不能直接这样取，例如：
+<img src="https://imgconvert.csdnimg.cn/aHR0cDovL2Jsb2dpbWcucGlnZ3lnYWdhLnRvcC9ibG9nL1BDQXgyLnBuZw?x-oss-process=image/format,png" alt="PCA1" /></p>
+<p>这个时候就是PCA展现作用的时候了。黑色坐标系是原始坐标系，红色坐表系是我后面构建的坐标系，如果我的坐标系是红色的，那么这个问题是不是就和上面那个问题一样了，我只需要去掉<span class="math inline">\(y_2\)</span>坐标系的数据即可。
+<img src="https://imgconvert.csdnimg.cn/aHR0cDovL2Jsb2dpbWcucGlnZ3lnYWdhLnRvcC9ibG9nL1BDQXBwcC5wbmc?x-oss-process=image/format,png" alt="PCA2" /></p>
+</div>
+<div id="pca的数学原理" class="section level3">
+<h3><span class="header-section-number">2.1.2</span> PCA的数学原理</h3>
+<p>构建一个函数 <span class="math inline">\(f(X_{m \times n})\)</span>，是这个函数可以将矩阵<span class="math inline">\(X_{m \times n}\)</span> 降维，矩阵<span class="math inline">\(X\)</span>是原始数据，矩阵的每一行是一个样本的特征向量，即矩阵<span class="math inline">\(X_{m\times n}\)</span> 中有<span class="math inline">\(m\)</span>个样本，每个样本有<span class="math inline">\(n\)</span>个特征值。所以，所谓的降维，其实是减少<span class="math inline">\(n\)</span>的数量。</p>
+<p>假设降维后的结构为<span class="math inline">\(Z_{m \times k}\)</span> ,其中<span class="math inline">\(k&lt;n\)</span>，那么PCA的数学表达可以这样表示：
+<span class="math display">\[Z_{m×k}=f(X_{m×n}),k&lt;n\]</span></p>
+<p>为了找到上面说的<span class="math inline">\(f(x)\)</span> 我们需要做一些工作，在线性空间中，矩阵可以表示为一种映射，所以上面的问题可以转化为寻找这样一个矩阵<span class="math inline">\(W\)</span>，该矩阵可以实现上面的映射目的：
+<span class="math display">\[Z_{m\times k} = W_{n\times k}X_{m\times n}\]</span></p>
+<p>最大化新坐标轴上的方差，就是让数据更加分散：
+<span class="math display">\[
+\begin{equation}
+\max\limits_{w}\frac{1}{m}\sum\limits_{i}^{m}(z_i - \bar{z})^2 \\
+s.t. \ \ \ \ \lVert W \rVert_2 = 1
+\end{equation}
+\]</span></p>
+<p>将上面的优化问题转化一下：</p>
+<p><span class="math display">\[
+\begin{align}
+&amp;\ \ \ \ \ \max\limits_{w}\frac{1}{m}\sum\limits_{i}^{m}(z_i-\bar{z})^2\\
+&amp;=\max\limits_{w}\frac{1}{m}\sum\limits_{i}^{m}(wx_i-w\bar{x})^2\\
+&amp;=\max\limits_{w}\frac{1}{m}\sum\limits_{i}^{m}(w(x_i-\bar{x}))(w(x_i-\bar{x}))^T\\
+&amp;=\max\limits_{w}\frac{1}{m}\sum\limits_{i}^{m}(w(x_i-\bar{x})(x_i-\bar{x})^Tw^T )^T\\
+&amp;=\max\limits_{w}\frac{1}{m}w\sum\limits_{i}^{m}(x_i-\bar{x})(x_i-\bar{x})^Tw^T\\
+&amp;=\max\limits_{w}\frac{1}{m}wCov(x)w^T
+\end{align}
+\]</span></p>
+<p>最终目标转化为：
+<span class="math display">\[
+\begin{equation}
+=\max\limits_{w}\frac{1}{m}wCov(x)w^T \\
+s.t. \ \ \ \ \lVert W \rVert_2 = 1
+\end{equation}
+\]</span></p>
+</div>
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+
+
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/lunr.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": null,
+"text": null
+},
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": null,
+"text": null
+},
+"download": null,
+"toc": {
+"collapse": "subsection"
+},
+"search": false
+});
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+</body>
+
+</html>
