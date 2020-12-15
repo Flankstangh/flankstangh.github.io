@@ -1,0 +1,4 @@
+#NOTE: This is a Maven Resolver internal implementation file, its format can be changed without prior notice.
+#Fri Nov 27 14:54:03 CST 2020
+http\://repo1.maven.org/maven2/.error=Could not transfer artifact org.apache.maven.plugins\:maven-surefire-plugin\:pom\:2.12.4 from/to repo1 (http\://repo1.maven.org/maven2/)\: Transfer failed for http\://repo1.maven.org/maven2/org/apache/maven/plugins/maven-surefire-plugin/2.12.4/maven-surefire-plugin-2.12.4.pom 501 HTTPS Required
+@default-repo1-http\://repo1.maven.org/maven2/.lastUpdated=1606460043120

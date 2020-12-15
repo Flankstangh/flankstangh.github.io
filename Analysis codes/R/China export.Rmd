@@ -1,0 +1,88 @@
+---
+title: "China Export"
+output: html_notebook
+---
+
+```{r}
+# 分组加总函数
+group_sum<-function(dataframe){
+  dataframe %>%
+    arrange(Sector,Gross.Export,Share) %>%
+    group_by(Sector) %>%
+    summarise(sum(Gross.Export),sum(Share))
+}
+```
+
+```{r message=FALSE}
+library(dplyr)
+export_df<-data.frame(matrix(NA,11,1))
+share_df<-data.frame(matrix(NA,11,1))
+
+for(year in 2009:2018){
+  df<-read.csv(paste('.\\data\\What did China export in ',as.character(year),'_.csv',sep=""),header=TRUE,encoding='UTF-8')
+  
+  if(year==2009){
+    export_df<-group_sum(df)$`Sector`
+    share_df<-group_sum(df)$`Sector`
+  }
+  export_df<-cbind(export_df,group_sum(df)$`sum(Gross.Export)`)
+  share_df<-cbind(share_df,group_sum(df)$`sum(Share)`)
+}
+
+export_df<-data.frame(export_df)
+share_df<-data.frame(share_df)
+colnames(export_df)<-c('Sector',2009:2018)
+colnames(share_df)<-c('Sector',2009:2018)
+export_df
+share_df
+
+```
+
+```{r}
+library(reshape2)
+library(knitr)
+reshape<-function(df){
+  tdf<-data.frame(t(df))
+  colnames(tdf)<-tdf[1,]
+  tdf<-tdf[-1,]
+  tdf<-add_rownames(tdf,"Year")
+  tdf<-melt(tdf,id.var="Year")
+  tdf$value<-as.numeric(tdf$value)
+  tdf
+}
+
+reshape(share_df)
+```
+
+```{r}
+#绘图
+
+ggplot(reshape(export_df),aes(group=variable))+
+  geom_line(aes(x=factor(Year),y=value,color=variable))+
+  xlab('Year')+ylab('Export')+
+  ggtitle('China Export Data for 2009~2018')+
+  theme(plot.title = element_text(hjust = 0.5)) 
+
+ggplot(reshape(share_df),aes(group=variable))+
+  geom_line(aes(x=factor(Year),y=value,color=variable))+
+  xlab('Year')+ylab('Share')+
+  ggtitle('China Export Share for 2009~2018')+
+  theme(plot.title = element_text(hjust = 0.5)) 
+
+```
+
+
+
+```{r}
+library(ggplot2)
+plot_line<-function(i){
+  geom_line(aes(x=c(2009:2018),y=as.vector(as.numeric(unlist(share_df[i,-1]))),color="red"))
+}
+p=ggplot()
+for(i in 1:10){
+  p=p+plot_line(i)+labs(x="Year", y = "Share")
+  print(p)
+}
+```
+
+
